@@ -1,0 +1,52 @@
+[2023-05-18 00:30:24] development.ERROR: Datos ya ingresados  
+[2023-05-18 00:46:50] development.ERROR: Datos ya ingresados  
+[2023-05-18 00:47:19] development.ERROR: PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 UNIQUE constraint failed: product.entity_id in /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/database/Connection.php:578
+Stack trace:
+#0 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/database/Connection.php(578): PDOStatement->execute()
+#1 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/database/Connection.php(786): Illuminate\Database\Connection->Illuminate\Database\{closure}('insert into "pr...', Array)
+#2 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/database/Connection.php(753): Illuminate\Database\Connection->runQueryCallback('insert into "pr...', Array, Object(Closure))
+#3 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/database/Connection.php(579): Illuminate\Database\Connection->run('insert into "pr...', Array, Object(Closure))
+#4 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/database/Connection.php(531): Illuminate\Database\Connection->statement('insert into "pr...', Array)
+#5 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/database/Query/Builder.php(3292): Illuminate\Database\Connection->insert('insert into "pr...', Array)
+#6 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/app/Commands/FeedXml.php(88): Illuminate\Database\Query\Builder->insert(Array)
+#7 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/app/Commands/FeedXml.php(62): App\Commands\FeedXml->feedDB(Array, 'sqlite')
+#8 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/container/BoundMethod.php(36): App\Commands\FeedXml->handle()
+#9 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/container/Util.php(41): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#10 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/container/BoundMethod.php(93): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#11 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/container/BoundMethod.php(37): Illuminate\Container\BoundMethod::callBoundMethod(Object(LaravelZero\Framework\Application), Array, Object(Closure))
+#12 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/container/Container.php(662): Illuminate\Container\BoundMethod::call(Object(LaravelZero\Framework\Application), Array, Array, NULL)
+#13 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/console/Command.php(208): Illuminate\Container\Container->call(Array)
+#14 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/symfony/console/Command/Command.php(312): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#15 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/console/Command.php(178): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#16 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/symfony/console/Application.php(1040): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/symfony/console/Application.php(314): Symfony\Component\Console\Application->doRunCommand(Object(App\Commands\FeedXml), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/symfony/console/Application.php(168): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(200): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/laravel-zero/framework/src/Kernel.php(96): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/data-feed(37): LaravelZero\Framework\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 {main}
+
+Next Illuminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 UNIQUE constraint failed: product.entity_id (Connection: sqlite, SQL: insert into "product" ("entity_id", "sku", "price", "link", "image", "CaffeineType", "Count", "Flavored", "Seasonal", "Instock", "Facebook") values (340, 20, 41.6000, http://www.coffeeforless.com/green-mountain-coffee-french-roast-ground-coffee-24-2-2oz-bag.html, http://mcdn.coffeeforless.com/media/catalog/product/images/uploads/intro/frac_box.jpg, Caffeinated, 24, No, No, Yes, 1)) in /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/database/Connection.php:793
+Stack trace:
+#0 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/database/Connection.php(753): Illuminate\Database\Connection->runQueryCallback('insert into "pr...', Array, Object(Closure))
+#1 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/database/Connection.php(579): Illuminate\Database\Connection->run('insert into "pr...', Array, Object(Closure))
+#2 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/database/Connection.php(531): Illuminate\Database\Connection->statement('insert into "pr...', Array)
+#3 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/database/Query/Builder.php(3292): Illuminate\Database\Connection->insert('insert into "pr...', Array)
+#4 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/app/Commands/FeedXml.php(88): Illuminate\Database\Query\Builder->insert(Array)
+#5 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/app/Commands/FeedXml.php(62): App\Commands\FeedXml->feedDB(Array, 'sqlite')
+#6 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/container/BoundMethod.php(36): App\Commands\FeedXml->handle()
+#7 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/container/Util.php(41): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#8 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/container/BoundMethod.php(93): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#9 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/container/BoundMethod.php(37): Illuminate\Container\BoundMethod::callBoundMethod(Object(LaravelZero\Framework\Application), Array, Object(Closure))
+#10 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/container/Container.php(662): Illuminate\Container\BoundMethod::call(Object(LaravelZero\Framework\Application), Array, Array, NULL)
+#11 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/console/Command.php(208): Illuminate\Container\Container->call(Array)
+#12 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/symfony/console/Command/Command.php(312): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#13 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/illuminate/console/Command.php(178): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#14 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/symfony/console/Application.php(1040): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/symfony/console/Application.php(314): Symfony\Component\Console\Application->doRunCommand(Object(App\Commands\FeedXml), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/symfony/console/Application.php(168): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(200): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/vendor/laravel-zero/framework/src/Kernel.php(96): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 /Users/jorge/Documents/proyectosPersonales/laravel-zero/data-feed/data-feed(37): LaravelZero\Framework\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 {main}  
+[2023-05-18 15:36:49] development.ERROR: File don't exist  
